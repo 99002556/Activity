@@ -79,4 +79,19 @@ void test_divide(void) {
   
  
 }
+void test_factorial(void) {
+  CU_ASSERT(1 == factorial(0));
+  
+ 
+}
+void test_power(void) {
+  CU_ASSERT(1 == power(1, 0));
+  
+ 
+}
+void test_squareroot(void) {
+  CU_ASSERT(2 == squareroot(4));
+  
+ 
+}
 
