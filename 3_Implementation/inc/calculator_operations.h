@@ -23,7 +23,7 @@ int multiply(int operand1, int operand2);
 int divide(int operand1, int operand2);
 long factorial(int operand1);
 int power(int operand1,int operand2);
-
+int squareroot(int operand1);
 
 
 #endif  /* #define __CALCULATOR_OPERATIONS_H__ */
