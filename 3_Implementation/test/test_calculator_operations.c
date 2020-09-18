@@ -11,8 +11,8 @@ void test_subtract(void);
 void test_multiply(void);
 void test_divide(void);
 void test_factorial(void);
-void test_power(void);
-void test_squareroot(void);
+//void test_power(void);
+//void test_squareroot(void);
 
 
 /* Start of the application test */
@@ -31,8 +31,8 @@ int main() {
   CU_add_test(suite, "multiply", test_multiply);
   CU_add_test(suite, "divide", test_divide);
   CU_add_test(suite, "factorial", test_factorial);
-  CU_add_test(suite, "power", test_power);
-  CU_add_test(suite, "squareroot", test_squareroot);
+  //CU_add_test(suite, "power", test_power);
+  //CU_add_test(suite, "squareroot", test_squareroot);
 
 
 /* Note: Do not edit START*/
@@ -84,7 +84,7 @@ void test_factorial(void) {
   
  
 }
-void test_power(void) {
+/*void test_power(void) {
   CU_ASSERT(1 == power(1, 0));
   
  
@@ -93,5 +93,5 @@ void test_squareroot(void) {
   CU_ASSERT(2 == squareroot(4));
   
  
-}
+}*/
 
