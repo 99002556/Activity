@@ -10,6 +10,10 @@ void test_add(void);
 void test_subtract(void);
 void test_multiply(void);
 void test_divide(void);
+void test_factorial(void);
+void test_power(void);
+void test_squareroot(void);
+
 
 /* Start of the application test */
 int main() {
@@ -26,6 +30,9 @@ int main() {
   CU_add_test(suite, "subtract", test_subtract);
   CU_add_test(suite, "multiply", test_multiply);
   CU_add_test(suite, "divide", test_divide);
+  CU_add_test(suite, "factorial", test_factorial);
+  CU_add_test(suite, "power", test_power);
+  CU_add_test(suite, "squareroot", test_squareroot);
 
 
 /* Note: Do not edit START*/
@@ -44,29 +51,32 @@ int main() {
 /* Write all the test functions */ 
 void test_add(void) {
   CU_ASSERT(30 == add(10, 20));
+  CU_ASSERT(0 == add(0, 0));
+  CU_ASSERT(-110 == add(-50, -60));
+  CU_ASSERT(5 == add(10, -5));
+  CU_ASSERT(9 == add(-10, 1));
   
-  /* Dummy fail*/
-  CU_ASSERT(1500 == add(750, 7500));
 }
 
 void test_subtract(void) {
+  CU_ASSERT(2 == subtract(5, 3));
+  CU_ASSERT(-8 == subtract(-5, 3));
+  CU_ASSERT(0 == subtract(0, 0));
+  CU_ASSERT(1 == subtract(9, 8));
   CU_ASSERT(-3 == subtract(0, 3));
   
-  /* Dummy fail*/
-  CU_ASSERT(1 == subtract(1000, 900));
+  
 }
 
 void test_multiply(void) {
   CU_ASSERT(0 == multiply(1, 0));
   
-  /* Dummy fail*/
-  CU_ASSERT(2 == multiply(2, 5));
+
 }
 
 void test_divide(void) {
   CU_ASSERT(0 == divide(1, 0));
   
-  /* Dummy fail*/
-  CU_ASSERT(3 == divide(2, 2));
+ 
 }
 
