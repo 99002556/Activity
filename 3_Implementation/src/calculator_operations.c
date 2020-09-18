@@ -42,7 +42,15 @@ int power(int operand1,int operand2)
         return power(operand1, operand2 / 2) * power(operand1, operand2 / 2); 
     else
         return operand1 * power(operand1, operand2 / 2) * power(operand1, operand2 / 2); 
-}}
+}
+int squareroot(int operand1)
+{
+	if(operand1==0)
+		return 0;
+	else
+		return sqrt(operand1);
+}
+}
 
 
 
