@@ -25,7 +25,7 @@ int divide(int operand1, int operand2)
 }
 long factorial(int operand1)
 {
-	int i,fact;
+	int i,fact = 1;
 if (operand1 == 0)
         return 1;
     else {
