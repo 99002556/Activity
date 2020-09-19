@@ -39,9 +39,9 @@ int power(int operand1,int operand2)
     if (operand2 == 0) 
         return 1; 
     else if (operand2 % 2 == 0) 
-        return power(operand1, operand2 / 2) * power(operand1, operand2 / 2); 
+        return pow(operand1, operand2 / 2) * pow(operand1, operand2 / 2); 
     else
-        return operand1 * power(operand1, operand2 / 2) * power(operand1, operand2 / 2); 
+        return operand1 * pow(operand1, operand2 / 2) * pow(operand1, operand2 / 2); 
 }
 int squareroot(int operand1)
 {
