@@ -11,8 +11,8 @@ void test_subtract(void);
 void test_multiply(void);
 void test_divide(void);
 void test_factorial(void);
-//void test_power(void);
-//void test_squareroot(void);
+void test_power(void);
+void test_squareroot(void);
 
 
 /* Start of the application test */
