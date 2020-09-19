@@ -90,7 +90,7 @@ void test_power(void) {
  
 }
 void test_squareroot(void) {
-  CU_ASSERT(2 == squareroot(4));
+  CU_ASSERT(4 == squareroot(16));
   
  
 }
