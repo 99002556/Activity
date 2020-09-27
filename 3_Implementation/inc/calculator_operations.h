@@ -17,13 +17,21 @@
 * @param[in] operand2 
 * @return Result of operand1 + operand2
 */
-int add(int operand1, int operand2);
-int subtract(int operand1, int operand2);
-int multiply(int operand1, int operand2);
-int divide(int operand1, int operand2);
-long factorial(int operand1);
-int power(int operand1,int operand2);
-int squareroot(int operand1);
+int convertbinarytodecimal(long long n);
+long long convertdecimaltobinary(int n);
+long long convertOctalToDecimal(int octalNumber);
+int convertDecimalToOctal(int decimalNumber);
+int decimal_to_hexadecimal(int x);
+long long int hexa_binary(char hex[]);
+long long int binary_oct(long long binary);
+int convertbitooctal(long long bin);
+long long int hexa_oct(char hex[]);
+long long convertocttobi(int oct);
+int string_length(char s[]);
+int binary2decimal(char n[]);
+void printHexDigit(int d);
+void hextobin(char b[]);  
+
 
 
 #endif  /* #define __CALCULATOR_OPERATIONS_H__ */
