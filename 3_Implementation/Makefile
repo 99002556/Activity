@@ -1,18 +1,16 @@
 # Name of the project
-PROJECT_NAME = Calculator
-
+PROJECT_NAME = base
 # Output directory
 BUILD = build
 
 # All source code files
-SRC = project_main.c\
-src/calculator_operations.c\
+SRC = main.c\
+src/base.c\
 
 # All test source files
-TEST_SRC = src/calculator_operations.c\
-test/test_calculator_operations.c
-
-TEST_OUTPUT = $(BUILD)/Test_$(PROJECT_NAME).out
+TEST_SRC = src/base.c\
+test/test_base_operations.c
+TEST_OUTPUT = $(BUILD)/Test_$(PROJECT_NAME).out 
 
 # All include folders with header files
 INC	= -Iinc
@@ -30,6 +28,7 @@ $(PROJECT_NAME):all
 
 all: $(SRC) $(BUILD)
 	gcc $(SRC) $(INC) -o $(PROJECT_OUTPUT).out -lm
+
 # Call `make run` to run the application
 run:$(PROJECT_NAME)
 	./$(PROJECT_OUTPUT).out
@@ -43,10 +42,10 @@ test:$(BUILD)
 	gcc $(TEST_SRC) $(INC) -o $(TEST_OUTPUT) -lcunit -lm
 	./$(TEST_OUTPUT)
 
-# Remove all the built files, invoke by `make clean`
+# Remove all the built files, invoke by `make clean
 clean:
 	rm -rf $(BUILD) $(DOCUMENTATION_OUTPUT)
 
-# Create,, new build folder if not present
+# Create new build folder if not present
 $(BUILD):
 	mkdir build
