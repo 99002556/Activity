@@ -1,19 +1,18 @@
 #include <CUnit/Basic.h>
 #include <CUnit/CUnit.h>
-
+//#include <math.h>
 
 /* Modify these two lines according to the project */
 #include <calculator_operations.h>
-#define PROJECT_NAME    "Calculator"
+#define PROJECT_NAME    "base"
 
 /* Prototypes for all the test functions */
-void test_add(void);
-void test_subtract(void);
-void test_multiply(void);
-void test_divide(void);
-void test_factorial(void);
-//void test_power(void);
-//void test_squareroot(void);
+void test_bin2dec(void);
+void test_dec2bin(void);
+void test_oct2dec(void);
+void test_dec2oct(void);
+void test_dec2hex(void);
+void test_bin2oct(void);
 
 
 /* Start of the application test */
@@ -27,15 +26,13 @@ int main() {
   
   
   /* Add your test functions in this format for testing*/
-  CU_add_test(suite, "add", test_add);
-  CU_add_test(suite, "subtract", test_subtract);
-  CU_add_test(suite, "multiply", test_multiply);
-  CU_add_test(suite, "divide", test_divide);
-  CU_add_test(suite, "factorial", test_factorial);
-  //CU_add_test(suite, "power", test_power);
-  //CU_add_test(suite, "squareroot", test_squareroot);
-
-
+  CU_add_test(suite, "bin2dec", test_bin2dec);
+  CU_add_test(suite, "dec2bin", test_dec2bin);
+  CU_add_test(suite, "oct2dec", test_oct2dec);
+  CU_add_test(suite, "dec2oct", test_dec2oct);
+  CU_add_test(suite, "dec2hex", test_dec2hex);
+  CU_add_test(suite, "bin2oct", test_bin2oct);
+ 
 /* Note: Do not edit START*/
   /* Setup Test Framework to output the result to Screen */
   CU_basic_set_mode(CU_BRM_VERBOSE);
@@ -50,49 +47,47 @@ int main() {
 }
 
 /* Write all the test functions */ 
-void test_add(void) {
-  CU_ASSERT(30 == add(10, 20));
-  CU_ASSERT(0 == add(0, 0));
-  CU_ASSERT(-110 == add(-50, -60));
-  CU_ASSERT(5 == add(10, -5));
-  CU_ASSERT(9 == add(-10, 1));
-  
-}
-
-void test_subtract(void) {
-  CU_ASSERT(2 == subtract(5, 3));
-  CU_ASSERT(-8 == subtract(-5, 3));
-  CU_ASSERT(0 == subtract(0, 0));
-  CU_ASSERT(1 == subtract(9, 8));
-  CU_ASSERT(-3 == subtract(0, 3));
+void test_bin2dec(void) {
+  CU_ASSERT(439== convertbinarytodecimal(110110111));
+  CU_ASSERT(170== convertbinarytodecimal(10101010));
+  CU_ASSERT(0== convertbinarytodecimal(0));
   
   
 }
-
-void test_multiply(void) {
-  CU_ASSERT(0 == multiply(1, 0));
+void test_dec2bin(void) {
+  CU_ASSERT(1010== convertdecimaltobinary(10));
+  CU_ASSERT(11001== convertdecimaltobinary(25));
+  CU_ASSERT(0== convertdecimaltobinary(0));
   
-
+  
 }
-
-void test_divide(void) {
-  CU_ASSERT(0 == divide(1, 0));
+void test_oct2dec(void) {
+  CU_ASSERT(255== convertOctalToDecimal(377));
+  CU_ASSERT(302== convertOctalToDecimal(456));
+  CU_ASSERT(0== convertOctalToDecimal(0));
+   
   
- 
+  
 }
-void test_factorial(void) {
-  CU_ASSERT(1 == factorial(0));
+void test_dec2oct(void) {
+  CU_ASSERT(12== convertDecimalToOctal(10));
+  CU_ASSERT(17== convertDecimalToOctal(15));
+  CU_ASSERT(0== convertDecimalToOctal(0));
   
- 
+  
 }
-/*void test_power(void) {
-  CU_ASSERT(1 == power(1, 0));
+void test_dec2hex(void) {
+  CU_ASSERT(64== decimal_to_hexadecimal(100));
+   
   
- 
+  
 }
-void test_squareroot(void) {
-  CU_ASSERT(4 == squareroot(16));
+void test_bin2oct(void) {
+  CU_ASSERT(17== convertbitooctal(1111));
+  CU_ASSERT(21== convertbitooctal(10001));
+  CU_ASSERT(0== convertbitooctal(0));
+   
   
- 
-}*/
+  
+}
 
